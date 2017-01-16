@@ -1,0 +1,33 @@
+<%- model_class = Flight -%>
+<p id="notice"><%= notice %></p>
+
+<h1><%= '.title', default: model_class.model_name.human.pluralize.titleize %></h1>
+
+<table class = "table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id)%></th>
+      <th><%= model_class.human_attribute_name(:flight_number)%></th>
+      <th><%= model_class.human_attribute_name(:flight_time)%></th>
+      <th><%= model_class.human_attribute_name(:checkin_time)%></th>
+      <th><%=t '.actions', default: t("helpers.actions")%></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @flights.each do |flight| %>
+      <tr>
+        <td><%= link_to flight.id, flight_path, flight %></td>
+        <td><%= flight.flight_number %></td>
+        <td><%= flight.flight_time %></td>
+        <td><%= flight.checkin_time %></td>
+        <td><%= link_to 'Edit', edit_flight_path, flight, class: 'btn btn-default btn-xs' %>
+        <td><%= link_to 'Destroy', flight, method: :delete, class:  'btn btn-xs btn-danger', data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Flight', new_flight_path, class: 'btn btn-primary' %>

@@ -1,0 +1,49 @@
+<%= form_for(flight) do |f| %>
+  <% if flight.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(flight.errors.count, "error") %> prohibited this flight from being saved:</h2>
+
+      <ul>
+      <% flight.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :flight_number, class: 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+    <%= f.text_field :flight_number, class: 'form-control' %>
+    </div>
+    <%= f.error_span(:flight_number) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :flight_time, "Flight Time and Date", class: 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+    <%= time_select :flight, :flight_time, { class: 'form-control' } %>
+    </div>
+    <div class="col-lg-10">
+    <%= date_select :flight, :flight_time, { class: 'form-control' } %>
+    </div>
+    <%= f.error_span(:flight_time) %>
+  </div>
+    <div class="form-group">
+    <%= f.label :checkin_time, "Flight Check-in Time", class: 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+    <%= time_select :flight, :checkin_time, { class: 'form-control' } %>
+    </div>
+    <div class="col-lg-10">
+    <%= date_select :flight, :checkin_time, { class: 'form-control' } %>
+    </div>
+    <%= f.error_span(:checkin_time) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                flights_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>
