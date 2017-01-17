@@ -1,7 +1,7 @@
 <%- model_class = Flight -%>
 <p id="notice"><%= notice %></p>
 
-<h1><%= '.title', default: model_class.model_name.human.pluralize.titleize %></h1>
+<h1> Flights </h1>
 
 <table class = "table table-striped">
   <thead>
@@ -17,11 +17,11 @@
   <tbody>
     <% @flights.each do |flight| %>
       <tr>
-        <td><%= link_to flight.id, flight_path, flight %></td>
+        <td><%= link_to flight.id, user_flights_path, flight %></td>
         <td><%= flight.flight_number %></td>
         <td><%= flight.flight_time %></td>
         <td><%= flight.checkin_time %></td>
-        <td><%= link_to 'Edit', edit_flight_path, flight, class: 'btn btn-default btn-xs' %>
+        <td><%= link_to 'Edit', edit_user_flights_path, flight, class: 'btn btn-default btn-xs' %>
         <td><%= link_to 'Destroy', flight, method: :delete, class:  'btn btn-xs btn-danger', data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Flight', new_flight_path, class: 'btn btn-primary' %>
+<%= link_to 'New Flight', new_user_flight_path, class: 'btn btn-primary' %>

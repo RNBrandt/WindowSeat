@@ -2,4 +2,5 @@
 
 <%= render 'form', flight: @flight %>
 
-<%= link_to 'Back', flights_path %>
+<%= link_to 'Back', user_flights_path(current_user) %>
+<%= link_to 'My Flights', user_flights_url(current_user) %>

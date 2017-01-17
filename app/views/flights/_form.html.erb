@@ -1,4 +1,4 @@
-<%= form_for(flight) do |f| %>
+<%= form_for :flight do |f| %>
   <% if flight.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(flight.errors.count, "error") %> prohibited this flight from being saved:</h2>
@@ -43,7 +43,7 @@
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                flights_path, :class => 'btn btn-default' %>
+                user_flights_path(current_user), :class => 'btn btn-default' %>
     </div>
   </div>
 <% end %>

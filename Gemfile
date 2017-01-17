@@ -45,6 +45,8 @@ gem "workless", "~> 1.2.2"
 # gem 'redis', '~> 3.0'
 # Use Devise for authentication and authorization
 gem 'devise'
+
+gem 'omniauth'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
