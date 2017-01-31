@@ -22,7 +22,6 @@ class FlightsController < ApplicationController
   def create
     # Time.zone = flight_params[:time_zone]
     @flight = Flight.new(flight_params)
-
     respond_to do |format|
       if @flight.save
         format.html { redirect_to @flight, notice: 'Flight was successfully created.' }

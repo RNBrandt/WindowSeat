@@ -29,8 +29,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Twilio
 gem 'twilio-ruby'
 
-# Use delayed job for running background jobs
-gem 'delayed_job_active_record'
+# Use sidekiq for running background jobs
+gem 'sidekiq'
 
 # Need daemons to start delayed_job
 gem 'daemons'
