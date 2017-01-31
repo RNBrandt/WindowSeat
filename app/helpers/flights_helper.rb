@@ -1,26 +1,28 @@
 module FlightsHelper
 
   def automatic_checkin(flight_object)
-    southwest = "https://www.southwest.com/"
-    page = Mechanize.new.get southwest
+    page = Mechanize.new.get "https://www.southwest.com/"
     form = page.form_with(:name => "homepage-booking-form-check-in")
-    form['confirmationNumber'] =
-    form['firstName'] =
-    form['lastName'] =
+    form['confirmationNumber'] = flight_object.confirmation_number
+    form['firstName'] = flight_object.user.first_name
+    form['lastName'] = flight_object.user.last_name
     form.submit
-    #do all the stuff to checkin online
+    # flight_object.checked_in_at = Time.zone.now
   end
 
-  def text_reminder(flight_object, body)
+  def text_reminder(phone_number)
     @twilio_number = ENV['TWILIO_NUMBER']
     @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
-    message = "this will change depending on success or failure"
-    time_string = ((self.checkin_time).localtime).strftime("%I:%M%p on %b. %d, %Y")
     message = @client.account.messages.create(
       from: @twilio_number,
       to: self.user.phone_number,
-      body: body
+      body: "OverheadStorage has checked you into your flight tomorrow.
+      You will still need to go on-line or visit a kiosk for your boarding documents."
       )
+  end
+
+  def flight_lookup(flight_id)
+    Flight.find(flight_id)
   end
 
   # handle_asynchronously

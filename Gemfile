@@ -39,21 +39,20 @@ gem 'daemons'
 gem "workless", "~> 1.2.2"
 
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
+gem 'redis', '~> 3.0'
 # Use Devise for authentication and authorization
 gem 'devise'
 
 gem 'omniauth'
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+#gem 'capistrano-rails', group: :development
 
 # Use capybara and selenium to access web content
-# gem 'capybara'
+#gem 'capybara'
 
-# gem 'selenium-webdriver', '~> 2.29.0'
+#gem 'selenium-webdriver', '~> 2.29.0'
 
 gem 'mechanize', '~> 2.7', '>= 2.7.4'
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -78,7 +77,6 @@ end
 group :development do
   gem 'listen', '~> 3.0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
