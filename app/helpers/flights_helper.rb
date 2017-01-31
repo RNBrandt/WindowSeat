@@ -18,9 +18,8 @@ module FlightsHelper
     time_string = ((self.checkin_time).localtime).strftime("%I:%M%p on %b. %d, %Y")
     message = @client.account.messages.create(
       from: @twilio_number,
-      to: self.user.phone_number)
-      body: body  )
+      to: self.user.phone_number,
+      body: body
+      )
   end
-
-
 end
