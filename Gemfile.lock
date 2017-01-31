@@ -1,13 +1,3 @@
-GIT
-  remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
-  revision: d3776ddd0b89d28fdebfd6e1c1541348cc90e5cc
-  specs:
-    twitter-bootstrap-rails (3.2.2)
-      actionpack (>= 3.1)
-      execjs (>= 2.2.2, >= 2.2)
-      less-rails (>= 2.5.0)
-      railties (>= 3.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -48,21 +38,12 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    addressable (2.5.0)
-      public_suffix (~> 2.0, >= 2.0.2)
     arel (7.1.4)
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.3)
     byebug (9.0.6)
-    capybara (2.11.0)
-      addressable
-      mime-types (>= 1.16)
-      nokogiri (>= 1.3.3)
-      rack (>= 1.0.0)
-      rack-test (>= 0.5.4)
-      xpath (~> 2.0)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -70,9 +51,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    commonjs (0.2.7)
     concurrent-ruby (1.0.4)
     daemons (1.2.4)
+    database_cleaner (1.5.3)
     debug_inspector (0.0.2)
     delayed_job (4.1.2)
       activesupport (>= 3.0, < 5.1)
@@ -86,18 +67,27 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    domain_name (0.5.20161129)
+      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     excon (0.54.0)
     execjs (2.7.0)
-    factory_girl (4.7.0)
+    factory_girl (4.8.0)
       activesupport (>= 3.0.0)
+    factory_girl_rails (4.8.0)
+      factory_girl (~> 4.8.0)
+      railties (>= 3.0.0)
     ffi (1.9.17)
+    figaro (1.1.1)
+      thor (~> 0.14)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hashie (3.4.6)
     heroku-api (0.4.2)
       excon (~> 0.45)
       multi_json (~> 1.8)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
     i18n (0.7.0)
     jbuilder (2.6.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -108,13 +98,6 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.6)
     jwt (1.5.6)
-    less (2.6.0)
-      commonjs (~> 0.2.7)
-    less-rails (2.8.0)
-      actionpack (>= 4.0)
-      less (~> 2.6.0)
-      sprockets (> 2, < 4)
-      tilt
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -122,6 +105,15 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    mechanize (2.7.5)
+      domain_name (~> 0.5, >= 0.5.1)
+      http-cookie (~> 1.0)
+      mime-types (>= 1.17.2)
+      net-http-digest_auth (~> 1.1, >= 1.1.1)
+      net-http-persistent (~> 2.5, >= 2.5.2)
+      nokogiri (~> 1.6)
+      ntlm-http (~> 0.1, >= 0.1.1)
+      webrobots (>= 0.0.9, < 0.2)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -129,15 +121,17 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
+    net-http-digest_auth (1.4)
+    net-http-persistent (2.9.4)
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    ntlm-http (0.1.1)
     omniauth (1.3.1)
       hashie (>= 1.2, < 4)
       rack (>= 1.0, < 3)
     orm_adapter (0.5.0)
     pg (0.19.0)
-    public_suffix (2.0.5)
     puma (3.6.2)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -231,6 +225,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
     warden (1.2.6)
       rack (>= 1.0)
     web-console (2.3.0)
@@ -238,6 +235,7 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    webrobots (0.1.2)
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -246,23 +244,23 @@ GEM
       heroku-api
       rails
       rush
-    xpath (2.0.0)
-      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   byebug
-  capybara (~> 2.7, >= 2.7.1)
   coffee-rails (~> 4.2)
   daemons
+  database_cleaner
   delayed_job_active_record
   devise
-  factory_girl
+  factory_girl_rails
+  figaro
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  mechanize (~> 2.7, >= 2.7.4)
   omniauth
   pg
   puma (~> 3.0)
@@ -276,7 +274,6 @@ DEPENDENCIES
   sqlite3
   turbolinks (~> 5)
   twilio-ruby
-  twitter-bootstrap-rails!
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

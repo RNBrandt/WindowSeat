@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Flight, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { is_expected.to validate_presence_of :flight_number }
+  it { is_expected.to validate_presence_of :flight_time }
+  it { is_expected.to validate_presence_of :checkin_time }
 end

@@ -15,7 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem 'figaro'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -28,9 +28,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Twilio
 gem 'twilio-ruby'
-
-# Use bootstrap themes
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Use delayed job for running background jobs
 gem 'delayed_job_active_record'
@@ -50,14 +47,18 @@ gem 'omniauth'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use capybara to access web content
-gem 'capybara', '~> 2.7', '>= 2.7.1'
+# Use capybara and selenium to access web content
+# gem 'capybara'
+
+# gem 'selenium-webdriver', '~> 2.29.0'
+
+gem 'mechanize', '~> 2.7', '>= 2.7.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
 
   #Use rspec for testing
   gem 'rspec-rails'
@@ -65,22 +66,22 @@ group :development, :test do
   #Use SQLite for dev and testing
   gem 'sqlite3'
 
+  gem 'database_cleaner'
+
   #Use shoulda matchers for easier rspec syntax
   gem 'shoulda-matchers', '~> 3.0'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'listen', '~> 3.0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
