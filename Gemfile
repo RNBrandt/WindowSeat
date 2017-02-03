@@ -26,6 +26,9 @@ gem 'jbuilder', '~> 2.5'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Use stripe for payment processing
+gem 'stripe'
+
 # Use Twilio
 gem 'twilio-ruby'
 
