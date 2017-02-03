@@ -4,9 +4,9 @@ class FlightsController < ApplicationController
 
   def index
     @flights = Flight.all
-    if @flights.length == 0
-      flash[:alert] = "You have no upcoming flights, create one to get started"
-    end
+    # if @flights.length == 0
+    #   flash[:alert] = "You have no upcoming flights, create one to get started"
+    # end
   end
 
   def show
@@ -22,9 +22,10 @@ class FlightsController < ApplicationController
   def create
     # Time.zone = flight_params[:time_zone]
     @flight = Flight.new(flight_params)
+    @flight.user = current_user
     respond_to do |format|
       if @flight.save
-        format.html { redirect_to @flight, notice: 'Flight was successfully created.' }
+        format.html { redirect_to user_flights_url, notice: 'Flight was successfully created.' }
         format.json { render :show, status: :created, location: @flight }
       else
         format.html { render :new }
@@ -36,7 +37,7 @@ class FlightsController < ApplicationController
   def update
     respond_to do |format|
       if @flight.update(flight_params)
-        format.html { redirect_to @flight, notice: 'Flight was successfully updated.' }
+        format.html { redirect_to user_flights_url, notice: 'Flight was successfully updated.' }
         format.json { render :show, status: :ok, location: @flight }
       else
         format.html { render :edit }
@@ -48,7 +49,7 @@ class FlightsController < ApplicationController
   def destroy
     @flight.destroy
     respond_to do |format|
-      format.html { redirect_to flights_url, notice: 'Flight was successfully destroyed.' }
+      format.html { redirect_to user_flights_url, notice: 'Flight was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -59,6 +60,6 @@ class FlightsController < ApplicationController
     end
 
     def flight_params
-      params.require(:flight).permit(:flight_time, :flight_number, :checkin_time, :confirmation_number, :user)
+      params.require(:flight).permit(:flight_time, :flight_number, :checkin_time, :confirmation_number)
     end
 end

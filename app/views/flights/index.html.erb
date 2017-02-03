@@ -17,12 +17,11 @@
   <tbody>
     <% @flights.each do |flight| %>
       <tr>
-        <td><%= link_to flight.id, user_flights_path, flight %></td>
-        <td><%= flight.flight_number %></td>
+        <td><%= link_to "#{flight.id}", user_flights_path(flight)%></td>
+        <td><%= flight.checkin_time.strftime("%D/%m/%Y ") %></td>
         <td><%= flight.flight_time %></td>
-        <td><%= flight.checkin_time %></td>
-        <td><%= link_to 'Edit', edit_user_flights_path, flight, class: 'btn btn-default btn-xs' %>
-        <td><%= link_to 'Destroy', flight, method: :delete, class:  'btn btn-xs btn-danger', data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_user_flight_url(current_user, flight), class: 'btn btn-default btn-xs' %>
+        <td><%= link_to 'Destroy', user_flight_url(current_user,flight), method: :delete, class:  'btn btn-xs btn-danger', data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
