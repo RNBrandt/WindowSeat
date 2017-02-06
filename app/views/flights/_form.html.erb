@@ -18,25 +18,43 @@
     </div>
   </div>
 
-  <div class="form-group md-2">
-    <%= f.label :flight_time, "Flight Time and Date", class: 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-    <%= time_select :flight, :flight_time, { class: 'form-control' } %>
-    </div>
-    <div class="col-lg-10">
-    <%= date_select :flight, :flight_time, { class: 'form-control' } %>
+ <div class="container">
+  <div class='col-md-5'>
+    <div class="form-group">
+      <label> Flight Time </label>
+      <div class='input-group date' id='flight-time'>
+        <input type='text' class="form-control" />
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
     </div>
   </div>
-    <div class="form-group md-2">
-    <%= f.label :checkin_time, "Flight Check-in Time", class: 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-    <%= time_select :flight, :checkin_time, { class: 'form-control' } %>
+  <div class='col-md-5'>
+    <div class="form-group">
+      <label> Check-in Time </label>
+      <div class='input-group date' id='checkin-time'>
+        <input type='text' class="form-control" />
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
     </div>
-    <div class="col-lg-10">
-    <%= date_select :flight, :checkin_time, { class: 'form-control' } %>
-    </div>
-
   </div>
+</div>
+<script type="text/javascript">
+  $(function () {
+    $('#flight-time').datetimepicker();
+    $('#checkin-time').datetimepicker({
+      useCurrent: false //Important! See issue #1075
+    });
+    $("#flight-time").on("dp.change", function (e) {
+      var flightTime = e.date
+      var checkIn = new Date(flightTime - 86400000)
+      $('#checkin-time').text(checkIn);
+    });
+  });
+</script>
 
   <div class="form-group md-2">
     <div class="col-lg-offset-2 col-lg-10">
@@ -46,3 +64,4 @@
     </div>
   </div>
 <% end %>
+<!-- -->
