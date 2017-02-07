@@ -21,9 +21,9 @@
  <div class="container">
   <div class='col-md-5'>
     <div class="form-group">
-      <label> Flight Time </label>
+      <label>Flight Time</label>
       <div class='input-group date' id='flight-time'>
-        <input type='text' class="form-control" />
+        <%=f.text_field :flight_time, class:"form-control" %>
         <span class="input-group-addon">
           <span class="glyphicon glyphicon-calendar"></span>
         </span>
@@ -35,9 +35,9 @@
       <label> Check-in Time </label>
       <div class='input-group date' id='checkin-time'>
         <input type='text' class="form-control" />
-        <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
-        </span>
+        <!-- <span class="input-group-addon"> -->
+          <!-- <span class="glyphicon glyphicon-calendar"></span> -->
+        <!-- </span> -->
       </div>
     </div>
   </div>
