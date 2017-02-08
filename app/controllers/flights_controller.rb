@@ -21,7 +21,6 @@ class FlightsController < ApplicationController
 
   def create
     # Time.zone = flight_params[:time_zone]
-    puts "******* FLIGHT PARAMS #{flight_params[:flight_time]}"
     @flight = Flight.new(flight_params)
     @flight.user = current_user
     p @flight.flight_time = DateTime.parse(flight_params[:flight_time])
