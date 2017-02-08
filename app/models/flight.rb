@@ -5,7 +5,7 @@ class Flight < ApplicationRecord
   belongs_to :user
 
   before_validation :set_checkin
-  after_save :set_async
+  # after_save :set_async
 
   private
 
