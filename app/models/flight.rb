@@ -10,13 +10,11 @@ class Flight < ApplicationRecord
   private
 
   def set_checkin
-    self.checkin_time = self.flight_time.prev_day
+    self.checkin_time = self.flight_time.prev_day if self.flight_time
   end
 
   def set_async
-    puts "there is a thing"
     FlightWorker.perform_at(scheduled_at, self.id)
-    puts "Here is a thing"
   end
 
   def scheduled_at

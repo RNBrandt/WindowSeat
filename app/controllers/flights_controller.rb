@@ -21,13 +21,16 @@ class FlightsController < ApplicationController
 
   def create
     # Time.zone = flight_params[:time_zone]
+    puts "******* FLIGHT PARAMS #{flight_params[:flight_time]}"
     @flight = Flight.new(flight_params)
     @flight.user = current_user
+    p @flight.flight_time = DateTime.parse(flight_params[:flight_time])
     respond_to do |format|
       if @flight.save
         format.html { redirect_to user_flights_url, notice: 'Flight was successfully created.' }
         format.json { render :show, status: :created, location: @flight }
       else
+        p @flight.errors
         format.html { render :new }
         format.json { render json: @flight.errors, status: :unprocessable_entity }
       end
@@ -60,6 +63,6 @@ class FlightsController < ApplicationController
     end
 
     def flight_params
-      params.require(:flight).permit(:flight_time, :flight_number, :checkin_time, :confirmation_number)
+      params.require(:flight).permit(:flight_time, :confirmation_number)
     end
 end

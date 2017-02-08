@@ -21,9 +21,8 @@
  <div class="container">
   <div class='col-md-5'>
     <div class="form-group">
-      <label>Flight Time</label>
-      <div class='input-group date' id='flight-time'>
-        <%=f.text_field :flight_time, class:"form-control" %>
+      <div class='input-group date'>
+        <%= f.datetime_field :flight_time, class:"form-control"%>
         <span class="input-group-addon">
           <span class="glyphicon glyphicon-calendar"></span>
         </span>
@@ -35,23 +34,25 @@
       <label> Check-in Time </label>
       <div class='input-group date' id='checkin-time'>
         <input type='text' class="form-control" />
-        <!-- <span class="input-group-addon"> -->
-          <!-- <span class="glyphicon glyphicon-calendar"></span> -->
-        <!-- </span> -->
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
       </div>
     </div>
   </div>
 </div>
 <script type="text/javascript">
   $(function () {
-    $('#flight-time').datetimepicker();
-    $('#checkin-time').datetimepicker({
-      useCurrent: false //Important! See issue #1075
-    });
-    $("#flight-time").on("dp.change", function (e) {
-      var flightTime = e.date
-      var checkIn = new Date(flightTime - 86400000)
-      $('#checkin-time').text(checkIn);
+    // $('#flight-time').datetimepicker();
+    // $('#checkin-time').datetimepicker({
+    //   useCurrent: false //Important! See issue #1075
+    // });
+    $("#flight_flight_time").on("focusout", function (e) {
+      value = $("#flight_flight_time").val()
+      console.log($("#flight-time"))
+      console.log((new Date(value))-1)
+      var checkIn = new Date(value) - 864e5
+      $('#checkin-time').text(new Date(checkIn));
     });
   });
 </script>
