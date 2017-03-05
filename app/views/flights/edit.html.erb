@@ -1,19 +1,11 @@
+<% provide(:title, 'Edit Flight')  %>
+<% provide(:button_text, 'Edit Flight')%>
+
 <div class=title>Edit Flight</div>
 
-<%= form_for :flight, url: edit_flight_url(@flight) do |f| %>
-  <% if @flight.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@flight.errors.count, "error") %> prohibited this flight from being saved:</h2>
-
-      <ul>
-      <% @flight.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-<%= render 'form', flight: @flight %>
+<%=form_for @flight, url: user_flight_path do |f|%>
+  <%= render 'form', f: f %>
+<% end %>
 
 <%= link_to 'Show', user_flights_path(@flight) %> |
 <%= link_to 'Back', user_flights_path(current_user) %>
@@ -27,4 +19,3 @@
     });
   });
 </script>
-<% end %>

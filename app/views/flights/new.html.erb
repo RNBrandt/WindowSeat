@@ -1,6 +1,20 @@
-<h1>New Flight</h1>
+<% provide(:title, 'New Flight')  %>
+<% provide(:button_text, 'Create Flight')%>
 
-<%= render 'form', flight: @flight %>
+<div class=title>New Flight</div>
+<%=form_for @flight, url: user_flights_path(current_user), html: { method: :post } do |f|%>
+  <%= render 'form', f: f %>
+<% end %>
 
 <%= link_to 'Back', user_flights_path(current_user) %>
 <%= link_to 'My Flights', user_flights_url(current_user) %>
+
+<script type="text/javascript">
+  $(function () {
+    $("#flight_flight_time").on("focusout", function (e) {
+      flightTime = $("#flight_flight_time").val()
+      var checkIn = new Date(flightTime) - 864e5
+      $('#checkin-time').text(new Date(checkIn));
+    });
+  });
+</script>

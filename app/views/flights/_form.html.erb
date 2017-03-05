@@ -1,16 +1,3 @@
-<%= form_for :flight, url: user_flights_path(current_user) do |f| %>
-  <% if flight.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(flight.errors.count, "error") %> prohibited this flight from being saved:</h2>
-
-      <ul>
-      <% flight.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
 <div class="form-container">
   <label> Flight Number</label>
   <%= f.text_field :flight_number, class: 'center-block col-md-4 form-control'%>
@@ -31,20 +18,10 @@
 
   <div class="form-group md-2 flight-buttons">
     <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")), user_flights_path(current_user), :class => 'btn btn-default' %>
+      <%= f.submit yield(:button_text), class: 'btn btn-primary' %>
+      <%= link_to t('.cancel', default: t("helpers.links.cancel")), user_flights_path(current_user), :class => 'btn btn-default' %>
     </div>
   </div>
 </div>
 
-<script type="text/javascript">
-  $(function () {
-    $("#flight_flight_time").on("focusout", function (e) {
-      flightTime = $("#flight_flight_time").val()
-      var checkIn = new Date(flightTime) - 864e5
-      $('#checkin-time').text(new Date(checkIn));
-    });
-  });
-</script>
-<% end %>
-<!-- -->
+

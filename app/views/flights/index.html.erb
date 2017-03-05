@@ -19,8 +19,8 @@
         <td><%= link_to "#{flight.flight_number}", user_flights_path(flight)%></td>
         <td><%= flight.checkin_time %></td>
         <td><%= flight.flight_time %></td>
-        <td><%= link_to 'Edit', edit_flight_url(flight), class: 'btn btn-default btn-xs' %>
-          <%= link_to 'Destroy', user_flights_url(current_user,flight), method: :delete, class:  'btn btn-xs btn-danger', data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_user_flight_url(current_user, flight), class: 'btn btn-default btn-xs' %>
+          <%= link_to 'Destroy', user_flight_path(current_user,flight), method: :delete, class:  'btn btn-xs btn-danger'%></td>
       </tr>
     <% end %>
   </tbody>
