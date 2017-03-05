@@ -1,12 +1,11 @@
 <%- model_class = Flight -%>
 <p id="notice"><%= notice %></p>
 
-<h1> Flights </h1>
+<div class=title> Flights </div>
 
-<table class = "table table-striped table-bordered">
+<table class = "table table-striped table-bordered form-container">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id)%></th>
       <th><%= model_class.human_attribute_name(:flight_number)%></th>
       <th><%= model_class.human_attribute_name(:flight_time)%></th>
       <th><%= model_class.human_attribute_name(:checkin_time)%></th>
@@ -17,11 +16,11 @@
   <tbody>
     <% @flights.each do |flight| %>
       <tr>
-        <td><%= link_to "#{flight.id}", user_flights_path(flight)%></td>
-        <td><%= flight.checkin_time.strftime("%D/%m/%Y ") %></td>
+        <td><%= link_to "#{flight.flight_number}", user_flights_path(flight)%></td>
+        <td><%= flight.checkin_time %></td>
         <td><%= flight.flight_time %></td>
-        <td><%= link_to 'Edit', edit_user_flight_url(current_user, flight), class: 'btn btn-default btn-xs' %>
-        <td><%= link_to 'Destroy', user_flight_url(current_user,flight), method: :delete, class:  'btn btn-xs btn-danger', data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_flight_url(flight), class: 'btn btn-default btn-xs' %>
+          <%= link_to 'Destroy', user_flights_url(current_user,flight), method: :delete, class:  'btn btn-xs btn-danger', data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

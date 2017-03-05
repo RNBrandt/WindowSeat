@@ -11,58 +11,40 @@
     </div>
   <% end %>
 
-    <div class="form-group md-2">
-    <%= f.label :confirmation_number, class: 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-    <%= f.text_field :confirmation_number, class: 'form-control' %>
-    </div>
+<div class="form-container">
+  <label> Flight Number</label>
+  <%= f.text_field :flight_number, class: 'center-block col-md-4 form-control'%>
+
+  <label>Confirmation Number</label>
+  <%= f.text_field :confirmation_number, class: 'center-block col-md-4 form-control' %>
+
+  <label> Flight Time </label>
+  <div class='input-group date center-block col-md-4'>
+    <%= f.datetime_field :flight_time, class:"form-control"%>
   </div>
 
- <div class="container">
-  <div class='col-md-5'>
-    <div class="form-group">
-      <div class='input-group date'>
-        <%= f.datetime_field :flight_time, class:"form-control"%>
-        <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
-        </span>
-      </div>
-    </div>
+  <label> Check-in Time </label>
+  <div class='input-group date center-block col-md-4' id='checkin-time'>
+    <input type='text' class="form-control" />
   </div>
-  <div class='col-md-5'>
-    <div class="form-group">
-      <label> Check-in Time </label>
-      <div class='input-group date' id='checkin-time'>
-        <input type='text' class="form-control" />
-        <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
-        </span>
-      </div>
+  <br>
+
+  <div class="form-group md-2 flight-buttons">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")), user_flights_path(current_user), :class => 'btn btn-default' %>
     </div>
   </div>
 </div>
+
 <script type="text/javascript">
   $(function () {
-    // $('#flight-time').datetimepicker();
-    // $('#checkin-time').datetimepicker({
-    //   useCurrent: false //Important! See issue #1075
-    // });
     $("#flight_flight_time").on("focusout", function (e) {
-      value = $("#flight_flight_time").val()
-      console.log($("#flight-time"))
-      console.log((new Date(value))-1)
-      var checkIn = new Date(value) - 864e5
+      flightTime = $("#flight_flight_time").val()
+      var checkIn = new Date(flightTime) - 864e5
       $('#checkin-time').text(new Date(checkIn));
     });
   });
 </script>
-
-  <div class="form-group md-2">
-    <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                user_flights_path(current_user), :class => 'btn btn-default' %>
-    </div>
-  </div>
 <% end %>
 <!-- -->
