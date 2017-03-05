@@ -12,26 +12,29 @@
   <% end %>
 
 <div class="form-container">
+  <label> Flight Number</label>
+  <%= f.text_field :flight_number, class: 'center-block col-md-4 form-control'%>
+
   <label>Confirmation Number</label>
-  <%= f.text_field :confirmation_number, class: 'form-control' %>
+  <%= f.text_field :confirmation_number, class: 'center-block col-md-4 form-control' %>
 
   <label> Flight Time </label>
-  <div class='input-group date'>
+  <div class='input-group date center-block col-md-4'>
     <%= f.datetime_field :flight_time, class:"form-control"%>
   </div>
 
   <label> Check-in Time </label>
-  <div class='input-group date' id='checkin-time'>
+  <div class='input-group date center-block col-md-4' id='checkin-time'>
     <input type='text' class="form-control" />
   </div>
+  <br>
 
-  <div class="form-group md-2">
+  <div class="form-group md-2 flight-buttons">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")), user_flights_path(current_user), :class => 'btn btn-default' %>
     </div>
   </div>
-
 </div>
 
 <script type="text/javascript">

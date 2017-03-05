@@ -3,7 +3,7 @@ class FlightsController < ApplicationController
   before_action :set_flight, only: [:show, :edit, :update, :destroy]
 
   def index
-    @flights = Flight.all
+    @flights = Flight.where(user: current_user)
     # if @flights.length == 0
     #   flash[:alert] = "You have no upcoming flights, create one to get started"
     # end
@@ -62,6 +62,6 @@ class FlightsController < ApplicationController
     end
 
     def flight_params
-      params.require(:flight).permit(:flight_time, :confirmation_number)
+      params.require(:flight).permit(:flight_time, :confirmation_number, :flight_number)
     end
 end

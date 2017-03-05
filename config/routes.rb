@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :user do
-    resources :flights
+    resources :flights, shallow: true
   end
 
   resources :charges
