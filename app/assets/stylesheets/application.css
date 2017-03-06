@@ -44,3 +44,12 @@
   display: inline-block;
   /*margin: 0 auto;*/
 }
+
+#checkin-time{
+  margin-bottom: 2em;
+}
+
+table.flights-table{
+  margin-right: auto;
+  margin-left: auto;
+}
