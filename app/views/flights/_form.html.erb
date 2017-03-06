@@ -6,19 +6,19 @@
   <%= f.text_field :confirmation_number, class: 'center-block col-md-4 form-control' %>
 
   <label> Flight Time </label>
-  <div class='input-group date center-block col-md-4'>
+  <div class='input-group date center-block'>
     <%= f.datetime_field :flight_time, class:"form-control"%>
   </div>
 
   <label> Check-in Time </label>
-  <div class='input-group date center-block col-md-4' id='checkin-time'>
-    <input type='text' class="form-control" />
+  <div class='input-group date center-block' id='checkin-time'>
+    <input type='text' class="center-block form-control" />
   </div>
   <br>
-
+ <br>
   <div class="form-group md-2 flight-buttons">
     <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit yield(:button_text), class: 'btn btn-primary' %>
+      <%= f.submit yield(:button_text), class: 'btn btn-success' %>
       <%= link_to t('.cancel', default: t("helpers.links.cancel")), user_flights_path(current_user), :class => 'btn btn-default' %>
     </div>
   </div>
