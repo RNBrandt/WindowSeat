@@ -13,6 +13,4 @@ module FlightsHelper
   def flight_lookup(flight_id)
     Flight.find(flight_id)
   end
-
-  # handle_asynchronously
 end

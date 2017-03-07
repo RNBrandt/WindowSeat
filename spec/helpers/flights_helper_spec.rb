@@ -7,7 +7,6 @@ RSpec.describe FlightsHelper, type: :helper do
 
   describe "#flight_lookup" do
     it "will return the correct Flight object" do
-      # p "$$$$$$$$$$$ #{FlightsHelper.flight_lookup(flight.id)}"
       expect(FlightsHelper.flight_lookup(flight.id)).to eq flight
     end
   end
