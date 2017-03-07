@@ -6,6 +6,7 @@ class Flight < ApplicationRecord
 
   before_validation :set_checkin
   after_save :set_async
+  after_save :send_new_flight_email
 
   private
 
@@ -19,5 +20,9 @@ class Flight < ApplicationRecord
 
   def scheduled_at
     self.checkin_time.to_time.to_i - Time.now.to_i
+  end
+
+  def send_new_flight_email
+    FlightsMailer.new_flight_email(self).deliver
   end
 end
