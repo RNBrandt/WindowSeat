@@ -13,7 +13,8 @@ class FlightsMailer < ApplicationMailer
   end
 
   def new_flight_email(flight)
-    @fligth = flight
+    @flight = flight
     @user = flight.user
     mail(to: @user.email, subject: 'WindowSeat.club will check you into your flight')
+  end
 end
