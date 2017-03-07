@@ -41,7 +41,10 @@ RSpec.describe Flight, type: :model do
     end
 
     context "after the flight has been saved" do
-      before { flight.save }
+      before do
+        FlightWorker.clear
+        flight.save
+      end
 
       it "will set a FlightWorker after the Flight has been created" do
         expect(FlightWorker.jobs.size).to eq 1
