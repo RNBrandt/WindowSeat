@@ -6,6 +6,6 @@ class FlightWorker
     flight_object = flight_lookup flight_id
     return unless flight_object
     automatic_checkin flight_object
-    FlightsMailer.checked_in(flight_object).deliver
+    FlightsMailer.checked_in_email(flight_object).deliver
   end
 end

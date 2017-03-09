@@ -6,7 +6,7 @@ class FlightsMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Welcome to Window-Seat.club')
   end
 
-  def checked_in(flight)
+  def checked_in_email(flight)
     @flight = flight
     @user = flight.user
     mail(to: @user.email, subject: 'Window-Seat.club has checked you into your flight')
