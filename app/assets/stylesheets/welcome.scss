@@ -22,8 +22,7 @@
   font-size: 4em;
 }
 
-.btn-signup {
-  background-color: rgba(17, 163, 189, 1);
+.btn-lg {
   border-radius: 3px;
   text-transform: uppercase;
   margin: 20px;
@@ -31,20 +30,16 @@
   font-size: 1.6em;
   font-family: 'Bungee Inline', cursive;
 }
-.btn-signup:hover {
+
+.btn-lg:hover {
   background-color: #A0E6EB;
+}
+
+.btn-signup {
+  background-color: #11A3BD;
+  
 }
 
 .btn-login {
-  background-color: #1122BD;
-  border-radius: 3px;
-  text-transform: uppercase;
-  margin: 20px;
-  padding: 20px;
-  font-size: 1.6em;
-  font-family: 'Bungee Inline', cursive;
-}
-
-.btn-login:hover {
-  background-color: #A0E6EB;
+  background-color: #1122BD; 
 }
