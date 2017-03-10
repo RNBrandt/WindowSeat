@@ -2,8 +2,8 @@
   <div class="container">
     <h1 class="text-center landing-header">Window Seat</h1>
     <h3><span class="glyphicon glyphicon-send landing-icon" aria-hidden="true"></span></h3>
-    <button class="btn btn-lg btn-signup">Sign Up</button>
-    <button class="btn btn-lg btn-login">Login</button>
+    <%= link_to 'Sign Up', new_user_registration_url, class: "btn btn-lg btn-signup" %>
+    <%= link_to 'Sign In', new_user_session_url, class: "btn btn-lg btn-login" %>
     <div class="row">
       <div class="col-md-4">
         <h2>Add Your Flight</h2>
