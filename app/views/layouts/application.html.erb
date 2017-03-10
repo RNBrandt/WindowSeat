@@ -23,6 +23,7 @@
   </head>
 
   <body>
+    <% unless controller_name == "welcome" %>
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -53,6 +54,7 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+    <% end %>
     <div class="partial-container">
       <%= yield %>
     </div>
