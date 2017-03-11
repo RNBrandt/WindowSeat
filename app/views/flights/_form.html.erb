@@ -10,10 +10,14 @@
     <%= f.datetime_field :flight_time, class:"form-control"%>
   </div>
 
-  <label> Check-in Time </label>
+  <label> Time Zone </label>
+  <%= f.time_zone_select :timezone, ActiveSupport::TimeZone.all.sort, default: "Pacific Time (US & Canada)"%>
+  </div>
+
+<!--   <label> Check-in Time </label>
   <div class='input-group date center-block' id='checkin-time'>
     <input type='text' class="center-block form-control" />
-  </div>
+  </div> -->
   <br>
  <br>
   <div class="form-group md-2 flight-buttons">

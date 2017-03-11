@@ -20,10 +20,10 @@ class FlightsController < ApplicationController
   end
 
   def create
-    # Time.zone = flight_params[:time_zone]
     @flight = Flight.new(flight_params)
+    Time.zone = @flight.timezone
     @flight.user = current_user
-    p @flight.flight_time = DateTime.parse(flight_params[:flight_time])
+    @flight.flight_time = Time.zone.parse(flight_params[:flight_time])
     respond_to do |format|
       if @flight.save
         format.html { redirect_to user_flights_url, notice: 'Flight was successfully created.' }
@@ -62,6 +62,6 @@ class FlightsController < ApplicationController
     end
 
     def flight_params
-      params.require(:flight).permit(:flight_time, :confirmation_number, :flight_number)
+      params.require(:flight).permit(:flight_time, :confirmation_number, :flight_number, :timezone)
     end
 end
