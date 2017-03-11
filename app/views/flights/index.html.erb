@@ -7,8 +7,8 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:flight_number)%></th>
-      <th><%= model_class.human_attribute_name(:flight_time)%></th>
       <th><%= model_class.human_attribute_name(:checkin_time)%></th>
+      <th><%= model_class.human_attribute_name(:flight_time)%></th>
       <th><%=t '.actions', default: t("helpers.actions")%></th>
     </tr>
   </thead>
@@ -17,8 +17,8 @@
     <% @flights.each do |flight| %>
       <tr>
         <td><%= link_to "#{flight.flight_number}", user_flights_path(flight)%></td>
-        <td><%= flight.checkin_time %></td>
-        <td><%= flight.flight_time %></td>
+        <td><%= flight.checkin_time.in_time_zone(flight.timezone).strftime("%I:%M%p %m/%d/%Y #{flight.timezone}") %></td>
+        <td><%= flight.flight_time.in_time_zone(flight.timezone).strftime("%I:%M%p %m/%d/%Y #{flight.timezone}") %></td>
         <td><%= link_to 'Edit', edit_user_flight_url(current_user, flight), class: 'btn btn-default btn-xs' %>
           <%= link_to 'Destroy', user_flight_path(current_user,flight), method: :delete, class:  'btn btn-xs btn-danger'%></td>
       </tr>
