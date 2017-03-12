@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+
  body{
   background:url('fly-1109847_1280.jpg');
   background-size: cover;
@@ -21,8 +23,21 @@
   bottom: 0;
  }
 
- .navbar {
+ .navbar-default {
   margin: 0;
+  border-radius: 0px;
+ }
+
+ .nav-icon {
+  margin-right: 10px;
+ }
+
+ .navbar-brand, .navbar-nav {
+  font-family: 'Bungee Inline', cursive;
+ }
+
+ .navbar-nav {
+  font-size: 18px;
  }
 
  .shadow-container {
