@@ -21,6 +21,19 @@
   bottom: 0;
  }
 
+ .navbar {
+  margin: 0;
+ }
+
+ .shadow-container {
+  background-color:rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+ }
+
 .form-container{
   background-color: rgba(192,192,192, 0.3);
   margin: 0 auto;

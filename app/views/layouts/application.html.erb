@@ -23,6 +23,7 @@
   </head>
 
   <body>
+    <div class="shadow-container">
     <% unless controller_name == "welcome" %>
     <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -55,8 +56,9 @@
       </div><!-- /.container-fluid -->
     </nav>
     <% end %>
-    <div class="partial-container">
+      <div class="container">
       <%= yield %>
+      </div>
     </div>
   </body>
 </html>
