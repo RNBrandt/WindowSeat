@@ -40,6 +40,42 @@
   font-size: 18px;
  }
 
+ /* ===== FOOTER ===== */
+
+.footer {
+  height: 50px;
+  background-color: white;
+  border-width: 0px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.footer-link {
+  font-size: 14px;
+  font-family: 'Bungee Inline', cursive;
+  color: #777;
+  display: inline-block;
+  padding: 0 20px;
+  line-height: 50px;
+  vertical-align: middle;
+}
+
+.footer-link:visited {
+  color: #666;
+}
+
+
+.footer-link:hover {
+  background-color: white;
+  color: #000;
+  text-decoration: none;
+}
+
+/* ===== CONTAINERS ===== */
  .shadow-container {
   background-color:rgba(0, 0, 0, 0.4);
   width: 100%;
