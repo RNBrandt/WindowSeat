@@ -22,8 +22,8 @@
  <br>
   <div class="form-group md-2 flight-buttons">
     <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit yield(:button_text), class: 'btn btn-success' %>
-      <%= link_to t('.cancel', default: t("helpers.links.cancel")), user_flights_path(current_user), :class => 'btn btn-default' %>
+      <%= f.submit yield(:button_text), class: 'btn-sm btn-create' %>
+      <%= link_to t('.cancel', default: t("helpers.links.cancel")), user_flights_path(current_user), :class => 'btn-sm btn-cancel' %>
     </div>
   </div>
 </div>

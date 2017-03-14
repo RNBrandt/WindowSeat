@@ -109,6 +109,8 @@
 }
 
 .flight-buttons{
+  width: inherit;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -122,28 +124,49 @@
 }
 
 /* ===== BUTTONS ===== */
-.btn-lg {
+.btn {
   color: white;
   border-radius: 3px;
   text-transform: uppercase;
-  margin: 20px;
-  padding: 20px;
-  font-size: 1.6em;
   font-family: 'Bungee Inline', cursive;
   border-width: 0px;
 }
 
-a.btn-lg:visited {
+.btn:hover {
+  background-color: #A0E6EB;
+  text-decoration: none;
+}
+
+.btn:visited {
   color: white;
 }
 
-.btn-lg:hover {
-  background-color: #A0E6EB;
+.btn-lg {
+  @extend .btn;
+  margin: 20px;
+  padding: 20px;
+  font-size: 1.6em;
 }
+
+.btn-sm {
+  @extend .btn;
+  margin: 10px;
+  padding: 10px;
+  font-size: 1.2em;
+}
+
 .btn-signup {
   background-color: #11A3BD;
 }
 
 .btn-login {
   background-color: #1122BD; 
+}
+
+.btn-create {
+  background-color: #5cb85c;
+}
+
+.btn-cancel {
+  background-color: #333;
 }
