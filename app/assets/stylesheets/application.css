@@ -23,6 +23,14 @@
   bottom: 0;
  }
 
+ .title-div {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  width: 60em;
+  color: white;
+ }
+
  .navbar-default {
   margin: 0;
   border-radius: 0px;
@@ -68,7 +76,6 @@
   color: #666;
 }
 
-
 .footer-link:hover {
   background-color: white;
   color: #000;
@@ -112,4 +119,31 @@
 
 #checkin-time{
   margin-bottom: 2em;
+}
+
+/* ===== BUTTONS ===== */
+.btn-lg {
+  color: white;
+  border-radius: 3px;
+  text-transform: uppercase;
+  margin: 20px;
+  padding: 20px;
+  font-size: 1.6em;
+  font-family: 'Bungee Inline', cursive;
+  border-width: 0px;
+}
+
+a.btn-lg:visited {
+  color: white;
+}
+
+.btn-lg:hover {
+  background-color: #A0E6EB;
+}
+.btn-signup {
+  background-color: #11A3BD;
+}
+
+.btn-login {
+  background-color: #1122BD; 
 }
