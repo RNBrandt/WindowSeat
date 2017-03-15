@@ -7,9 +7,6 @@
   <%= render 'form', f: f %>
 <% end %>
 
-<%= link_to 'Show', user_flights_path(@flight) %> |
-<%= link_to 'Back', user_flights_path(current_user) %>
-
 <script type="text/javascript">
   $(function () {
     $("#flight_flight_time").on("focusout", function (e) {

@@ -6,9 +6,6 @@
   <%= render 'form', f: f %>
 <% end %>
 
-<%= link_to 'Back', user_flights_path(current_user) %>
-<%= link_to 'My Flights', user_flights_url(current_user) %>
-
 <script type="text/javascript">
   $(function () {
     $("#flight_flight_time").on("focusout", function (e) {
