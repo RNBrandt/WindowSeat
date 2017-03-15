@@ -185,8 +185,16 @@
   text-align: center;
 
   // style placeholder text
-  // Chrome/Opera/Safari, Firefox 19+, IE 10+, Firefox 18-
-  ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder { /*  */
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: white;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: white;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: white;
+  }
+  :-moz-placeholder { /* Firefox 18- */
     color: white;
   }
 
