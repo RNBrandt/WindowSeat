@@ -2,20 +2,27 @@
 
 <div class="form-container">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, class: "form-control" %>
+
+    <div class="row">
+    <div class="form-input">
+      <%= f.label :email, class: "hidden"%>
+      <%= f.email_field :email, autofocus: true, placeholder: "Email"  %>
+    </div>
     </div>
 
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+    <div class="row">
+    <div class="form-input">
+      <%= f.label :password, class: "hidden" %>
+      <%= f.password_field :password, autocomplete: "off", placeholder: "Password"  %>
+    </div>
     </div>
 
     <% if devise_mapping.rememberable? -%>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+      <div class="row">
+        <div class="form-input remember-me">
+          <%= f.check_box :remember_me %> 
+          <%= f.label :remember_me %>
+        </div>
       </div>
     <% end -%>
 
