@@ -210,10 +210,6 @@
   display: none;
 }
 
-// .vertical-form {
-//   display: block;
-// }
-
 .remember-me {
   margin-top: 20px;
   width: 40%;
@@ -221,5 +217,27 @@
   input, label {
     display: inline;
     vertical-align: middle;
+  }
+}
+
+// ===== RESPONSIVE STYLES ===== 
+@media screen and (max-width: 768px) {
+  .title-div {
+    width: 100%;
+  }
+  .form-container {
+    width: 100%;
+    padding: 10px;
+    margin: 25px auto;
+  }
+
+  .form-input {
+    margin: 25px auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  select {
+    font-size: 12px;
   }
 }
