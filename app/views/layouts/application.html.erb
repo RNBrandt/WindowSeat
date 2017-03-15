@@ -11,22 +11,23 @@
   <meta name="google-site-verification" content="17wJIvWDD3SmyhgSTORXwzEzTv0-tXtAL7iswNSqVgg" />
 
   <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
   <script
   src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
   integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
   crossorigin="anonymous"></script>
 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="shadow-container">
     <% unless controller_name == "welcome" %>
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
+          <!-- responsive menu -->
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -35,7 +36,6 @@
           </button>
           <a class="navbar-brand" href="/">Window Seat</a>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
@@ -55,8 +55,16 @@
       </div><!-- /.container-fluid -->
     </nav>
     <% end %>
-    <div class="partial-container">
+      <div class="container">
       <%= yield %>
+      </div>
+      <nav class="footer">
+        <div class="footer-links">
+          <a class="footer-link" href="#">© 2017</a>
+          <a class="footer-link" href="mailto:support@windowseat.club">Support <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a>           
+          <a class="footer-link" href="https://github.com/RNBrandt/WindowSeat">Code  <%= image_tag "GitHub-Mark-32px.png", alt: "GitHub logo", height: "24px" %></a>
+        </div>
+      </nav>
     </div>
   </body>
 </html>

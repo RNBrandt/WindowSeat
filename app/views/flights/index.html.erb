@@ -1,8 +1,8 @@
 <%- model_class = Flight -%>
 <p id="notice"><%= notice %></p>
 
-<div class=title> Flights </div>
 
+<div class="title-div"><h2 class="page-header">Flights</h2></div>
 <table class = "table table-striped table-bordered form-container">
   <thead>
     <tr>
@@ -28,7 +28,6 @@
 
 <br>
 <div class='flight-buttons'>
-  <%= link_to 'New Flight', new_user_flight_path, class: 'btn btn-primary' %>
-  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
+  <%= link_to 'New Flight', new_user_flight_path, class: 'btn-sm btn-create' %>
 </div>
 

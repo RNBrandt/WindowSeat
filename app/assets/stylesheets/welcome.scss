@@ -1,14 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
-
 .container {
   margin-bottom: 0px;
 }
 
 .jumbotron {
-  background-color:rgba(0, 0, 0, 0.4);
+  background-color:rgba(0, 0, 0, 0);
   color: white;
   text-align: center;
-  height: 100vh;
 }
 
 .landing-header, h2 {
@@ -20,32 +17,6 @@
 
 .landing-icon {
   font-size: 4em;
-}
-
-a.btn-lg:visited {
-  color: white;
-}
-
-.btn-lg {
-  border-radius: 3px;
-  text-transform: uppercase;
-  margin: 20px;
-  padding: 20px;
-  font-size: 1.6em;
-  font-family: 'Bungee Inline', cursive;
-}
-
-.btn-lg:hover {
-  background-color: #A0E6EB;
-}
-
-.btn-signup {
-  background-color: #11A3BD;
-  
-}
-
-.btn-login {
-  background-color: #1122BD; 
 }
 
 .glyphicon-heart:hover {
