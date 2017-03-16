@@ -48,6 +48,12 @@
   font-size: 18px;
  }
 
+ @media screen and (max-width: 768px) {
+    .title-div {
+      width: 100%;
+    }
+  }
+
  /* ===== FOOTER ===== */
 
 .footer {
@@ -228,110 +234,7 @@
   }
 }
 
-// ===== FLIGHTS TABLE =====
-.glyph-button {
-  font-size: 18px;
-  color: black;
-  margin: 5px;
-}
-
-.flights-table {
-  margin: 0 auto;
-  background-color: white;
-
-  th {
-    font-size: 16px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  tr {
-    margin-top: 20px;
-  }
-
-  // flight numbers
-  tr > td:nth-of-type(1){
-    vertical-align: middle;
-    font-size: 24px;
-    font-weight: bold;
-  }
-
- a:visited {
-  color: black;
- }
-}
-
-.time-block {
-  float: left;
-  max-width: 150px;
-}
-
-.rendered-time {
-  font-size: 18px;
- }
-
-.date-block {
-  float: right;
-  margin-right: 10px; 
-  max-width: 70px;
-  height: 70px;
-  border: 2px solid black;
-  border-top: 12px solid red;
-  vertical-align: middle;
-  display: block;
-}
-
-.cal-month, .cal-date {
-  display: block;
-  font-size: 18px; 
-  text-align: center;
-}
-
-.cal-date {
-  font-weight: bold;
-}
-
 @media screen and (max-width: 768px) {
-  .flights-table {
-    width: 100%;
-  }
-
-  .time-block {
-    float: none;
-  }
-
-  .date-block {
-    float: none;
-    margin: 0 auto;
-    margin-top: 10px;
-  }
-
-  .rendered-time {
-    font-size: 14px;
-  }
-
-  .flights-table {
-
-    th {
-      font-size: 14px;
-    }
-    tr > td:nth-of-type(1){
-      vertical-align: middle;
-      font-size: 14px;
-      font-weight: bold;
-    }
-  }
-
-  .glyph-button {
-    display: block;
-  }
-}
-
-// ===== RESPONSIVE STYLES ===== 
-@media screen and (max-width: 768px) {
-  .title-div {
-    width: 100%;
-  }
   .form-container {
     width: 100%;
     padding: 10px;
