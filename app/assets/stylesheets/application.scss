@@ -263,17 +263,17 @@
 
 .time-block {
   float: left;
-  width: 70%;
+  max-width: 150px;
 }
 
 .rendered-time {
   font-size: 18px;
-  // font-weight: bold;
  }
 
 .date-block {
   float: right;
-  width: 30%;
+  margin-right: 10px; 
+  max-width: 70px;
   height: 70px;
   border: 2px solid black;
   border-top: 12px solid red;
@@ -289,6 +289,42 @@
 
 .cal-date {
   font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .flights-table {
+    width: 100%;
+  }
+
+  .time-block {
+    float: none;
+  }
+
+  .date-block {
+    float: none;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+
+  .rendered-time {
+    font-size: 14px;
+  }
+
+  .flights-table {
+
+    th {
+      font-size: 14px;
+    }
+    tr > td:nth-of-type(1){
+      vertical-align: middle;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+
+  .glyph-button {
+    display: block;
+  }
 }
 
 // ===== RESPONSIVE STYLES ===== 
