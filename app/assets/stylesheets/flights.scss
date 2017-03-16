@@ -1,3 +1,95 @@
-// Place all the styles related to the Flights controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// ===== FLIGHTS TABLE =====
+.glyph-button {
+  font-size: 18px;
+  color: black;
+  margin: 5px;
+}
+
+.flights-table {
+  margin: 0 auto;
+  background-color: white;
+
+  th {
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  tr {
+    margin-top: 20px;
+  }
+
+  // flight numbers
+  tr > td:nth-of-type(1){
+    vertical-align: middle;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+ a:visited {
+  color: black;
+ }
+}
+
+.time-block {
+  float: left;
+  max-width: 150px;
+}
+
+.rendered-time {
+  font-size: 18px;
+ }
+
+.date-block {
+  float: right;
+  margin-right: 10px; 
+  max-width: 70px;
+  height: 70px;
+  border: 2px solid black;
+  border-top: 12px solid red;
+  vertical-align: middle;
+  display: block;
+}
+
+.cal-month, .cal-date {
+  display: block;
+  font-size: 18px; 
+  text-align: center;
+}
+
+.cal-date {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .time-block {
+    float: none;
+  }
+
+  .date-block {
+    float: none;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+
+  .rendered-time {
+    font-size: 14px;
+  }
+
+  .flights-table {
+    width: 100%;
+
+    th {
+      font-size: 14px;
+    }
+    tr > td:nth-of-type(1){
+      vertical-align: middle;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+
+  .glyph-button {
+    display: block;
+  }
+}
