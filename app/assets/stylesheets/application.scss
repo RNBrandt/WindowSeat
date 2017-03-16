@@ -1,0 +1,243 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+
+ body{
+  background:url('fly-1109847_1280.jpg');
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+ }
+
+ .title-div {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  width: 60em;
+  color: white;
+ }
+
+ .navbar-default {
+  margin: 0;
+  border-radius: 0px;
+ }
+
+ .nav-icon {
+  margin-right: 10px;
+ }
+
+ .navbar-brand, .navbar-nav {
+  font-family: 'Bungee Inline', cursive;
+ }
+
+ .navbar-nav {
+  font-size: 18px;
+ }
+
+ /* ===== FOOTER ===== */
+
+.footer {
+  height: 50px;
+  background-color: white;
+  border-width: 0px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 0px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.footer-link {
+  font-size: 14px;
+  font-family: 'Bungee Inline', cursive;
+  color: #777;
+  display: inline-block;
+  padding: 0 20px;
+  line-height: 50px;
+  vertical-align: middle;
+}
+
+.footer-link:visited {
+  color: #666;
+}
+
+.footer-link:hover {
+  background-color: white;
+  color: #000;
+  text-decoration: none;
+}
+
+/* ===== CONTAINERS ===== */
+ .shadow-container {
+  background-color:rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+ }
+
+.form-container{
+  background-color: rgba(192,192,192, 0.3);
+  margin: 0 auto;
+  border: 1em;
+  text-align: center;
+  display: block;
+  width: 60em;
+  padding: 20px;
+}
+
+.title{
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  text-align: center;
+  font-size: 5em;
+}
+
+.flight-buttons{
+  width: inherit;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.user-input-span{
+  display: inline-block;
+  /*margin: 0 auto;*/
+}
+
+#checkin-time{
+  margin-bottom: 2em;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  color: white;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-family: 'Bungee Inline', cursive;
+  border-width: 0px;
+}
+
+.btn:hover {
+  background-color: #A0E6EB;
+  text-decoration: none;
+}
+
+.btn:visited {
+  color: white;
+}
+
+.btn-lg {
+  @extend .btn;
+  margin: 20px;
+  padding: 20px;
+  font-size: 1.6em;
+}
+
+.btn-sm {
+  @extend .btn;
+  margin: 10px;
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+.btn-signup {
+  background-color: #11A3BD;
+}
+
+.btn-login {
+  background-color: #1122BD; 
+}
+
+.btn-create {
+  background-color: #5cb85c;
+}
+
+.btn-cancel {
+  background-color: #333;
+}
+
+/* ===== FORM INPUT ===== */
+
+.form-input {
+  color: white;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  height: 50px;
+  margin: 25px;
+  text-align: center;
+
+  // style placeholder text
+  // Chrome/Opera/Safari, Firefox 19+, IE 10+, Firefox 18-
+  ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder { /*  */
+    color: white;
+  }
+
+  input, select {
+    background: transparent;
+    border: 0px;
+    border-bottom: 4px solid white;
+    display: inline;
+    height: inherit;
+    text-align: center;
+  }
+
+  input:focus, select:focus {
+    outline: none;
+    border-color: #5cb85c;
+  }
+}
+
+// hidden form labels for screenreaders
+.hidden {
+  display: none;
+}
+
+.remember-me {
+  margin-top: 20px;
+  width: 40%;
+
+  input, label {
+    display: inline;
+    vertical-align: middle;
+  }
+}
+
+// ===== RESPONSIVE STYLES ===== 
+@media screen and (max-width: 768px) {
+  .title-div {
+    width: 100%;
+  }
+  .form-container {
+    width: 100%;
+    padding: 10px;
+    margin: 25px auto;
+  }
+
+  .form-input {
+    margin: 25px auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  select {
+    font-size: 12px;
+  }
+}
