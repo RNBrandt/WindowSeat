@@ -52,7 +52,7 @@ gem 'omniauth'
 #gem 'capistrano-rails', group: :development
 
 # Use capybara and selenium to access web content
-#gem 'capybara'
+gem 'capybara'
 
 #gem 'selenium-webdriver', '~> 2.29.0'
 
