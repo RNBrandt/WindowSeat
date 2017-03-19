@@ -69,6 +69,7 @@ group :development, :test do
   #Use SQLite for dev and testing
   gem 'sqlite3'
 
+  # Use database cleaner for maintaining test database
   gem 'database_cleaner'
 
   #Use shoulda matchers for easier rspec syntax
