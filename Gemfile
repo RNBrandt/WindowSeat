@@ -52,7 +52,7 @@ gem 'omniauth'
 #gem 'capistrano-rails', group: :development
 
 # Use capybara and selenium to access web content
-#gem 'capybara'
+gem 'capybara'
 
 #gem 'selenium-webdriver', '~> 2.29.0'
 
@@ -69,7 +69,11 @@ group :development, :test do
   #Use SQLite for dev and testing
   gem 'sqlite3'
 
+  # Use database cleaner for maintaining test database
   gem 'database_cleaner'
+
+  # Use launchy for debugging feature tests
+  gem 'launchy'
 
   #Use shoulda matchers for easier rspec syntax
   gem 'shoulda-matchers', '~> 3.0'

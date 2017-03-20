@@ -17,6 +17,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'sidekiq/testing'
+require 'support/sign_in_helper'
 Sidekiq::Testing.fake!
 
 RSpec.configure do |config|
@@ -99,4 +100,5 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+  config.include SignInHelper
 end
