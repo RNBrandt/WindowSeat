@@ -1,38 +1,31 @@
 require 'rails_helper'
 
 feature "authentication" do
+  let(:attrs){FactoryGirl.attributes_for(:user)}
+  let(:user) {FactoryGirl.build(:user)}
 
   scenario "user registration" do
     visit new_user_registration_path
-    fill_in 'First name', with: 'Tom'
-    fill_in 'Last name', with: 'Tom'
-    fill_in 'Email', with: 'tom@tom.com'
-    fill_in 'user_password', with: 'tomtom'
-    fill_in 'user_password_confirmation', with: 'tomtom'
+    fill_in 'First name', with: attrs[:first_name]
+    fill_in 'Last name', with: attrs[:last_name]
+    fill_in 'Email', with: attrs[:email]
+    fill_in 'user_password', with: attrs[:password]
+    fill_in 'user_password_confirmation', with: attrs[:password]
     find('input[name="commit"]').click
     expect(current_path).to eq new_user_flight_path(User.last)
     expect(page).to have_content 'New Flight'
   end
 
   scenario "user login" do
-    user = User.new(email: 'tom@tom.com', password: 'tomtom')
     user.save
-    visit new_user_session_path
-    fill_in 'Email', with: 'tom@tom.com'
-    fill_in 'Password', with: 'tomtom'
-    find('input[name="commit"]').click
+    sign_in_as(user.email)
     expect(current_path).to eq new_user_flight_path(user)
     expect(page).to have_content 'New Flight'
   end
 
   scenario "user sign out" do
-    user = User.new(email: 'tom@tom.com', password: 'tomtom')
     user.save
-    visit new_user_session_path
-    fill_in 'Email', with: 'tom@tom.com'
-    fill_in 'Password', with: 'tomtom'
-    find('input[name="commit"]').click
-
+    sign_in_as(user.email)
     click_link 'Sign Out'
     expect(current_path).to eq root_path
     expect(page).not_to have_content 'Your Flights'

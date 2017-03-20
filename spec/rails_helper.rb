@@ -77,4 +77,7 @@ RSpec.configure do |config|
     with.library :rails
     end
   end
+
+  # include Devise integration test helpers
+  config.include Devise::Test::IntegrationHelpers, type: :feature
 end
