@@ -72,6 +72,9 @@ group :development, :test do
   # Use database cleaner for maintaining test database
   gem 'database_cleaner'
 
+  # Use launchy for debugging feature tests
+  gem 'launchy'
+
   #Use shoulda matchers for easier rspec syntax
   gem 'shoulda-matchers', '~> 3.0'
 
