@@ -6,8 +6,9 @@ module FlightsHelper
     form['confirmationNumber'] = flight_object.confirmation_number
     form['firstName'] = flight_object.user.first_name
     form['lastName'] = flight_object.user.last_name
-    form.submit
-    # flight_object.checked_in_at = Time.zone.now
+    success_page = form.submit
+    success_page = success_page.content.to_s
+    flight_object.update(success_page: success_page)
   end
 
   def flight_lookup(flight_id)
