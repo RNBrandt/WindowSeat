@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310203128) do
+ActiveRecord::Schema.define(version: 20170322223813) do
 
   create_table "flights", force: :cascade do |t|
     t.datetime "created_at",          null: false
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170310203128) do
     t.string   "confirmation_number"
     t.integer  "user_id"
     t.string   "timezone"
+    t.text     "success_page"
     t.index ["user_id"], name: "index_flights_on_user_id"
   end
 
