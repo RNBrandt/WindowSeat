@@ -66,8 +66,7 @@ group :development, :test do
   #Use rspec for testing
   gem 'rspec-rails'
 
-  #Use SQLite for dev and testing
-  gem 'sqlite3'
+  gem 'rake'
 
   # Use database cleaner for maintaining test database
   gem 'database_cleaner'
