@@ -1,8 +1,8 @@
-# Window Seat ✈️
-Live app: [window-seat.club](https://window-seat.club)
+# Window Seat ✈️ [![Build Status](https://travis-ci.org/RNBrandt/WindowSeat.svg?branch=master)](https://travis-ci.org/RNBrandt/WindowSeat)
+Live app: [window-seat.club](https://window-seat.club) 
 
 ## Introduction 
-Window Seat is an app for the savvy traveler. 
+Window Seat is an app for the savvy traveler.
 
 1. Add your flight number, confirmation number, and boarding time for an upcoming Southwest flight.
 2. We check you in exactly 24 hours before boarding
