@@ -1,0 +1,8 @@
+services:
+- redis-server
+- postgresql
+before_script:
+- psql -c 'create database windowseat_test;' -U postgres
+language: ruby
+rvm:
+- 2.3.1
